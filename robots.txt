@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aemedenine.github.io/atelier-electronique/sitemap.xml
