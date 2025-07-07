@@ -1,0 +1,50 @@
+/* style.css - تصميم النسخة المتقدمة لموقع Atelier Electronique Médenine */
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; direction: rtl; }
+
+/* رأس الموقع */ header { background-color: #005f99; color: white; text-align: center; padding: 20px; }
+
+header img.logo { width: 100px; border-radius: 10px; margin-bottom: 10px; }
+
+/* أزرار CTA */ .cta-buttons { text-align: center; padding: 20px; }
+
+.cta-buttons a, .cta-buttons button { display: inline-block; margin: 8px; padding: 12px 20px; border: none; border-radius: 6px; background-color: #00a86b; color: white; text-decoration: none; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; }
+
+.cta-buttons a.maps { background: #e54b4b; } .cta-buttons a.photos { background: #5c6bc0; } .cta-buttons a.videos { background: #f57c00; } .cta-buttons a.lang { background: #0077cc; }
+
+/* شريط الأخبار */ .news-ticker { background-color: #c00000; color: white; padding: 10px; overflow: hidden; white-space: nowrap; font-weight: bold; }
+
+.news-ticker span { display: inline-block; padding-right: 100%; animation: scroll-horizontal 25s linear infinite; }
+
+@keyframes scroll-horizontal { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+/* المعرض */ .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1000px; margin: auto; }
+
+.gallery img { width: 100%; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+/* الأسئلة الشائعة */ .faq { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+.faq h2 { text-align: center; color: #005f99; }
+
+.faq-item { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+
+.faq-item h3 { cursor: pointer; position: relative; padding-right: 25px; }
+
+.faq-item h3::before { content: '+'; position: absolute; right: 0; top: 0; font-size: 20px; color: #005f99; }
+
+.faq-item.open h3::before { content: '-'; }
+
+.faq-item .answer { display: none; margin-top: 10px; }
+
+.faq-item.open .answer { display: block; }
+
+/* الفوتر */ footer { background: #eee; text-align: center; padding: 20px; font-size: 0.9em; }
+
+/* الشريط العلوي */ .info-bar { background: #fff; padding: 10px 0; text-align: center; font-weight: bold; font-size: 14px; }
+
+/* حالة الورشة */ .status { text-align: center; font-size: 16px; padding: 10px; font-weight: bold; color: green; }
+
+/* وسائط */ @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } }
+
