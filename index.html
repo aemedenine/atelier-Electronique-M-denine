@@ -1,52 +1,107 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atelier Electronique Médenine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     body {
-      margin: 0; font-family: sans-serif; line-height: 1.6; color: #333; background: #f9f9f9;
-    }
-    header {
-      background: #005f99; color: #fff; padding: 20px; text-align: center;
-    }
-    header img {
-      width: 140px; margin: 0 auto 10px; border-radius: 15px; display: block;
-    }
-    header h1 {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
       margin: 0;
+      direction: rtl;
+      text-align: center;
     }
-    header p.subtitle {
-      font-size: 16px; margin-top: -10px; margin-bottom: 5px;
+
+    header {
+      background-color: #005f99;
+      color: white;
+      padding: 20px;
     }
-    .container {
-      padding: 15px;
+
+    header img {
+      width: 100px;
+      border-radius: 10px;
+      margin: 10px;
     }
-    .cta-buttons a {
-      display: inline-block; margin: 10px 5px; padding: 12px 20px;
-      background: #00a86b; color: #fff; text-decoration: none; border-radius: 5px;
-    }
-    .cta-buttons a.maps {
-      background: #e54b4b;
-    }
-    .gallery {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px;
-    }
-    .gallery img {
-      width: 100%; height: auto; border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #ccc;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-    footer {
-      background: #eee; padding: 15px; text-align: center; font-size: 0.9em;
-    }
+
     .info-bar {
-      text-align: center; margin-top: 10px; font-weight: bold; background: #fff; padding: 8px 0;
+      background: #fff;
+      padding: 10px 0;
+      font-weight: bold;
     }
+
+    .cta-buttons {
+      margin: 20px 0;
+    }
+
+    .cta-buttons a, .cta-buttons button {
+      display: inline-block;
+      margin: 10px 8px;
+      padding: 12px 20px;
+      background: #00a86b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-buttons a.maps { background: #e54b4b; }
+    .cta-buttons a.photos { background: #5c6bc0; }
+    .cta-buttons a.videos { background: #f57c00; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 60px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: #eee;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    /* شريط الأخبار */
+    .news-ticker {
+      background-color: #c00000;
+      color: white;
+      padding: 10px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .news-ticker span {
+      display: inline-block;
+      padding-right: 100%;
+      animation: scroll-horizontal 25s linear infinite;
+    }
+
+    @keyframes scroll-horizontal {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
     @media (max-width: 600px) {
       .gallery {
         grid-template-columns: 1fr;
@@ -56,67 +111,97 @@
 </head>
 <body>
 
+<!-- التاريخ وعدد الزيارات -->
 <div class="info-bar">
   ⏱️ <span id="current-time"></span> | 👁️ <span id="visit-count"></span>
 </div>
 
+<!-- شريط الأخبار -->
+<div class="news-ticker">
+  <span id="live-news">📰 جاري تحميل الأخبار...</span>
+</div>
+
 <header>
-  <img src="logo.png" alt="Logo Atelier Electronique Médenine" />
+  <img src="logo.png" alt="شعار الورشة" />
   <h1>Atelier Electronique Médenine</h1>
-  <p class="subtitle">ورشة إلكترونيك الرحماني</p>
-  <p>تصليح إلكتروني لكل تونس – إرسال واستقبال مضمون</p>
+  <p>ورشة إلكترونيك الرحماني - نخدمو تونس الكل</p>
+  <img src="qr-code.png" alt="QR Code" />
+  <p style="font-size: 0.9em;">📱 امسح للوصول السريع</p>
 </header>
 
-<div class="container">
-  
-  <div class="cta-buttons">
-    <a href="https://wa.me/21698192103" target="_blank">📞 اتصل بينا واتساب</a>
-    <a href="https://maps.app.goo.gl/nxBU8h2oFDEkiBFE9" class="maps" target="_blank">🗺️ شوف موقعنا على Google Maps</a>
-  </div>
-  
-  <p>
-    📦 الحريف يتصل بينا، وإحنا نرجعو نتواصلو معاه عبر الطرق المتاحة (واتساب، مكالمة...).  
-    نعملو تشخيص، نصلّحوه، ونعلموه بالنتيجة.
-  </p>
-  
-  <div class="gallery">
-    <img src="Rt.png" alt="تصليح كارت إلكترونية" />
-    <img src="Hh.png" alt="لحام مكونات إلكترونية" />
-    <img src="Ff.png" alt="إصلاح كمبيوتر" />
-    <img src="Tt.png" alt="إصلاح جهاز منزلي" />
-    <img src="Cc.jpg" alt="لحام مكونات إلكترونية" />
-    <img src="Ce.jpg" alt="لحام مكونات إلكترونية" />
-    <img src="Tech.jpg" alt="الفني في العمل" />
-  </div>
-  
+<!-- الأزرار -->
+<div class="cta-buttons">
+  <a href="https://wa.me/21698192103" target="_blank">📞 تواصل معنا واتساب</a>
+  <a href="https://maps.app.goo.gl/nxBU8h2oFDEkiBFE9" class="maps" target="_blank">🗺️ شوفنا على Google Maps</a>
+  <a href="photos.html" class="photos">📷 شوف الصور</a>
+  <a href="videos.html" class="videos">🎞️ شوف الفيديو</a>
+  <button id="play-radio">▶️ تشغيل الراديو</button>
+</div>
+
+<!-- معرض صور بسيط -->
+<div class="gallery">
+  <img src="Tech.jpg" alt="صورة من الورشة" />
+  <img src="Hh.png" alt="إصلاح إلكتروني" />
 </div>
 
 <footer>
-  📍 مدنين – نخدمو في كامل أنحاء تونس | WhatsApp: 98 192 103  
-  <br>⏱️ التوقيت: من الإثنين للسبت، من 8 صباحًا إلى 18 مساءً – الأحد: راحة
+  📍 مدنين – نخدمو في كامل أنحاء تونس | 📲 WhatsApp:98192103  
+  <br>⏰ من الإثنين للسبت، 08:00 - 18:00 | الأحد راحة
 </footer>
 
+<!-- مشغل الراديو مخفي -->
+<audio id="radio" preload="none">
+  <source src="https://stream.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg" />
+  المتصفح لا يدعم مشغل الصوت.
+</audio>
+
 <script>
+  // تحديث الوقت والتاريخ
   function updateTime() {
     const now = new Date();
     const days = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
     const months = ['جانفي', 'فيفري', 'مارس', 'أفريل', 'ماي', 'جوان', 'جويلية', 'أوت', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
-
     const day = days[now.getDay()];
     const date = now.getDate();
     const month = months[now.getMonth()];
-    const hours = now.getHours().toString().padStart(2,'0');
-    const minutes = now.getMinutes().toString().padStart(2,'0');
-
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
     document.getElementById('current-time').textContent = `${day} ${date} ${month} - ${hours}:${minutes}`;
   }
 
+  // تحديث عداد الزيارات
   function updateVisits() {
     let visits = localStorage.getItem('visit-count');
     visits = visits ? parseInt(visits) + 1 : 1;
     localStorage.setItem('visit-count', visits);
     document.getElementById('visit-count').textContent = `عدد الزيارات: ${visits}`;
   }
+
+  // تحكم زر تشغيل الراديو
+  const radio = document.getElementById('radio');
+  const radioBtn = document.getElementById('play-radio');
+
+  radioBtn.addEventListener('click', () => {
+    if (radio.paused) {
+      radio.play();
+      radioBtn.textContent = '⏸️ إيقاف الراديو';
+    } else {
+      radio.pause();
+      radioBtn.textContent = '▶️ تشغيل الراديو';
+    }
+  });
+
+  // جلب أخبار BBC عربي
+  fetch('https://api.rss2json.com/v1/api.json?rss_url=http://feeds.bbci.co.uk/arabic/rss.xml')
+    .then(response => response.json())
+    .then(data => {
+      const newsItems = data.items.slice(0, 4);
+      const newsText = newsItems.map(item => `📰 ${item.title}`).join(' ⚡ ');
+      document.getElementById('live-news').textContent = newsText;
+    })
+    .catch(err => {
+      document.getElementById('live-news').textContent = '❌ فشل تحميل الأخبار.';
+    });
 
   updateTime();
   updateVisits();
