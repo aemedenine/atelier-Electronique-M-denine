@@ -1,136 +1,136 @@
 <!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atelier Electronique Médenine</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="ورشة إلكترونيك الرحماني - تصليح، صيانة، تشخيص كروت إلكترونية في مدنين وخارجها.">
-  <meta name="keywords" content="إلكترونيك, تصليح, مدنين, كروت إلكترونية, كمبيوتر, Atelier Electronique Médenine">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     html {
       scroll-behavior: smooth;
-    }
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      direction: rtl;
-      text-align: center;
-    }
-    header {
-      background-color: #005f99;
-      color: white;
-      padding: 20px;
-    }
-    header img.logo {
-      width: 80px;
-      border-radius: 10px;
-      margin: 10px;
-    }
-    header img.qr {
-      width: 80px;
-      margin-top: 10px;
-    }
-    .info-bar {
-      background: #fff;
-      padding: 10px 0;
-      font-weight: bold;
-    }
-    .cta-buttons {
-      margin: 20px 0;
-    }
-    .cta-buttons a, .cta-buttons button {
-      display: inline-block;
-      margin: 10px 8px;
-      padding: 12px 20px;
-      background: #00a86b;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-    .cta-buttons a.maps { background: #e54b4b; }
-    .cta-buttons a.photos { background: #5c6bc0; }
-    .cta-buttons a.videos { background: #f57c00; }
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .news-ticker {
-      background-color: #c00000;
-      color: white;
-      padding: 10px 0;
-      overflow: hidden;
-      white-space: nowrap;
-      font-weight: bold;
-      position: relative;
-    }
-    .news-ticker span {
-      display: inline-block;
-      padding-right: 100%;
-      animation: scroll-horizontal 25s linear infinite;
-    }
-    @keyframes scroll-horizontal {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    footer {
-      background: #eee;
-      padding: 15px;
-      font-size: 0.9em;
-    }
-    @media (max-width: 600px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-      header img.logo, header img.qr {
-        width: 60px;
-      }
-    }
+      scroll-padding-top: 100px;
+    }body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  direction: rtl;
+  text-align: center;
+}
+
+header {
+  background-color: #005f99;
+  color: white;
+  padding: 20px;
+}
+
+header img {
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.info-bar {
+  background: #fff;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.cta-buttons {
+  margin: 20px 0;
+}
+
+.cta-buttons a, .cta-buttons button {
+  display: inline-block;
+  margin: 10px 8px;
+  padding: 12px 20px;
+  background: #00a86b;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-buttons a.maps { background: #e54b4b; }
+.cta-buttons a.photos { background: #5c6bc0; }
+.cta-buttons a.videos { background: #f57c00; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: #eee;
+  padding: 15px;
+  font-size: 0.9em;
+}
+
+.news-ticker {
+  background-color: #c00000;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+  position: relative;
+}
+
+.news-ticker span {
+  display: inline-block;
+  padding-right: 100%;
+  animation: scroll-horizontal 25s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
-<body>
-<div class="info-bar">
+<body><div class="info-bar">
   ⏱️ <span id="current-time"></span> | 👁️ <span id="visit-count"></span>
-</div>
-<div class="news-ticker">
+</div><!-- شريط الأخبار --><div class="news-ticker">
   <span id="live-news">📰 جاري تحميل الأخبار...</span>
-</div>
-<header>
-  <img src="logo.png" alt="شعار الورشة" class="logo" />
+</div><header>
+  <img src="logo.png" alt="شعار الورشة" />
   <h1>Atelier Electronique Médenine</h1>
   <p>ورشة إلكترونيك الرحماني - نخدمو تونس الكل</p>
-  <img src="qr-code.png" alt="QR Code" class="qr" />
+  <img src="qr-code.png" alt="QR Code" />
   <p style="font-size: 0.9em;">📱 امسح للوصول السريع</p>
-</header>
-<div class="cta-buttons">
+</header><!-- الأزرار --><div class="cta-buttons">
   <a href="https://wa.me/21698192103" target="_blank">📞 تواصل معنا واتساب</a>
   <a href="https://maps.app.goo.gl/nxBU8h2oFDEkiBFE9" class="maps" target="_blank">🗺️ شوفنا على Google Maps</a>
   <a href="photos.html" class="photos">📷 شوف الصور</a>
   <a href="videos.html" class="videos">🎞️ شوف الفيديو</a>
-  <button id="play-radio">📻 شغّل البث المباشر</button>
-</div>
-<div class="gallery">
+  <button id="play-radio">📻 شغّل الراديو</button>
+  <button onclick="toggleLanguage()">🌐 تغيير اللغة</button>
+</div><!-- صور --><div class="gallery">
   <img src="Tech.jpg" alt="صورة من الورشة" />
   <img src="Hh.png" alt="إصلاح إلكتروني" />
-</div>
-<footer>
+</div><footer>
   📍 مدنين – نخدمو في كامل أنحاء تونس | 📲 WhatsApp:98192103<br>
   ⏰ من الإثنين للسبت، 08:00 - 18:00 | الأحد راحة
-</footer>
-<audio id="radio-stream" src="https://stream.radiojar.com/8s5u5tpdtwzuv" preload="none"></audio>
+</footer><audio id="radio-stream" src="https://stream.radiojar.com/8s5u5tpdtwzuv" preload="none"></audio>
+
 <script>
   function updateTime() {
     const now = new Date();
@@ -139,40 +139,70 @@
     const day = days[now.getDay()];
     const date = now.getDate();
     const month = months[now.getMonth()];
-    const hours = now.getHours().toString().padStart(2,'0');
-    const minutes = now.getMinutes().toString().padStart(2,'0');
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
     document.getElementById('current-time').textContent = `${day} ${date} ${month} - ${hours}:${minutes}`;
   }
+
   function updateVisits() {
     let visits = localStorage.getItem('visit-count');
     visits = visits ? parseInt(visits) + 1 : 1;
     localStorage.setItem('visit-count', visits);
     document.getElementById('visit-count').textContent = `عدد الزيارات: ${visits}`;
   }
+
+  // تشغيل الراديو
   const radio = document.getElementById('radio-stream');
   const radioBtn = document.getElementById('play-radio');
+
   radioBtn.addEventListener('click', () => {
     if (radio.paused) {
       radio.play();
-      radioBtn.textContent = "⏸️ إيقاف البث";
+      radioBtn.textContent = '⏸️ أوقف الراديو';
     } else {
       radio.pause();
-      radioBtn.textContent = "📻 شغّل البث المباشر";
+      radioBtn.textContent = '📻 شغّل الراديو';
     }
   });
+
+  // تغيير اللغة
+  let currentLang = 'ar';
+  function toggleLanguage() {
+    if (currentLang === 'ar') {
+      document.documentElement.lang = 'fr';
+      document.documentElement.dir = 'ltr';
+      document.querySelector('h1').textContent = "Atelier Électronique Médenine";
+      document.querySelector('p').textContent = "Atelier de réparation électronique - On couvre toute la Tunisie";
+      radioBtn.textContent = "📻 Écouter la radio";
+      document.querySelector('.photos').textContent = "📷 Voir les photos";
+      document.querySelector('.videos').textContent = "🎞️ Voir les vidéos";
+      currentLang = 'fr';
+    } else {
+      document.documentElement.lang = 'ar';
+      document.documentElement.dir = 'rtl';
+      document.querySelector('h1').textContent = "Atelier Electronique Médenine";
+      document.querySelector('p').textContent = "ورشة إلكترونيك الرحماني - نخدمو تونس الكل";
+      radioBtn.textContent = "📻 شغّل الراديو";
+      document.querySelector('.photos').textContent = "📷 شوف الصور";
+      document.querySelector('.videos').textContent = "🎞️ شوف الفيديو";
+      currentLang = 'ar';
+    }
+  }
+
+  // جلب الأخبار
   fetch('https://api.rss2json.com/v1/api.json?rss_url=http://feeds.bbci.co.uk/arabic/rss.xml')
     .then(res => res.json())
     .then(data => {
-      const newsItems = data.items.slice(0, 5);
-      const newsText = newsItems.map(item => `📰 ${item.title}`).join(' ⚡ ');
-      document.getElementById('live-news').textContent = newsText;
+      const items = data.items.slice(0, 4);
+      const news = items.map(item => `📰 ${item.title}`).join(' ⚡ ');
+      document.getElementById('live-news').textContent = news;
     })
     .catch(() => {
       document.getElementById('live-news').textContent = '❌ فشل تحميل الأخبار';
     });
+
   updateTime();
   updateVisits();
   setInterval(updateTime, 60000);
-</script>
-</body>
+</script></body>
 </html>
