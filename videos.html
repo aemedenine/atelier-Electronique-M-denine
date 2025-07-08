@@ -2,7 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>فيديوهات الورشة - Atelier Electronique Médenine</title>
+  <title>🎥 فيديوهات الورشة - Atelier Electronique Médenine</title>
+  <meta name="description" content="شاهد فيديوهات حقيقية من داخل ورشة Atelier Electronique Médenine: إصلاح، لحام، وتجارب دقيقة.">
+  <meta name="keywords" content="فيديو, تصليح, لحام, كروت, إلكترونيات, مدنين, تونس, ورشة إلكترونيك">
+  <link rel="icon" href="favicon.png" />
   <style>
     body {
       font-family: sans-serif;
@@ -15,6 +18,7 @@
 
     h1 {
       margin-bottom: 10px;
+      color: #005f99;
     }
 
     p.subtitle {
@@ -30,11 +34,21 @@
       margin: 0 auto;
     }
 
+    figure {
+      margin: 0;
+    }
+
     video {
       width: 100%;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       outline: none;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
     }
 
     a.back {
@@ -57,18 +71,24 @@
 <body>
 
   <h1>🎥 فيديوهات الورشة</h1>
-  <p class="subtitle">بعض من لقطات العمل والتقنيات داخل ورشة إلكترونيك الرحماني</p>
+  <p class="subtitle">بعض لقطات العمل والمهارة داخل الورشة</p>
 
   <div class="videos">
-    <video controls>
-      <source src="video1.mp4" type="video/mp4" />
-      المتصفح لا يدعم عرض الفيديو.
-    </video>
-    <video controls>
-      <source src="video2.mp4" type="video/mp4" />
-      المتصفح لا يدعم عرض الفيديو.
-    </video>
-    <!-- تنجم تزيد فيديوهات بنفس الشكل -->
+    <figure>
+      <video controls poster="cover1.jpg">
+        <source src="video1.mp4" type="video/mp4" />
+        المتصفح لا يدعم عرض الفيديو.
+      </video>
+      <figcaption>إصلاح كارت إنفرتر</figcaption>
+    </figure>
+
+    <figure>
+      <video controls poster="cover2.jpg">
+        <source src="video2.mp4" type="video/mp4" />
+        المتصفح لا يدعم عرض الفيديو.
+      </video>
+      <figcaption>لحام مكونات دقيقة</figcaption>
+    </figure>
   </div>
 
   <a href="index.html" class="back">⬅️ الرجوع للصفحة الرئيسية</a>
