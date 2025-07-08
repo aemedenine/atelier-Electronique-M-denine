@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +10,7 @@
       scroll-behavior: smooth;
       scroll-padding-top: 100px;
     }
+
     body {
       font-family: sans-serif;
       background-color: #f9f9f9;
@@ -30,6 +32,10 @@
       align-items: center;
       max-width: 800px;
       margin: auto;
+    }
+
+    .header-logo, .header-qr {
+      width: 90px;
     }
 
     .experience-badge {
@@ -159,21 +165,22 @@
   <div class="info-bar">
     ⏱️ <span id="current-time"></span> | 👁️ <span id="visit-count"></span>
   </div>
+
   <div class="news-ticker">
     <span id="live-news">📰 جاري تحميل الأخبار...</span>
   </div>
+
   <header>
-    
-        <img src="qr-code.png" alt="QR Code" style="width: 90px; border-radius: 10px;" />
+    <div class="header-top">
+      <img src="A_vector-based_logo_for_Atelier_Electronique_Méden.png" alt="شعار الورشة" class="header-logo" />
+      <div style="text-align: center;">
+        <img src="qr-code.png" alt="QR Code" class="header-qr" />
         <p id="qr-label" style="font-size: 0.9em; margin-top: 5px;">📱 امسح للوصول السريع</p>
       </div>
     </div>
+
     <div class="experience-badge">🌼 10+ سنوات خبرة</div>
-    
     <h1>Atelier Electronique Médenine</h1>
-    <div class="header-top">
-      <img src="logo.png" alt="شعار الورشة" style="width: 140px; border-radius: 10px;" />
-      <div style="text-align: center;">
     <p id="slogan">ورشة إلكترونيك الرحماني - نخدمو تونس الكل</p>
   </header>
 
@@ -290,7 +297,7 @@
     setInterval(updateTime, 60000);
   </script>
 
-  <script async defer src="https://maps.app.goo.gl/gP8HpnBjeqRYPXfAA?g_st=ac"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
   <script>
     function initMap() {
       const location = { lat: 33.354, lng: 10.500 };
