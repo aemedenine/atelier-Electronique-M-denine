@@ -61,15 +61,24 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
-    .back {
+    .btn-bar {
+      margin: 30px 0;
+    }
+
+    .btn-bar a {
       display: inline-block;
-      margin: 30px auto;
+      margin: 10px 8px;
       padding: 12px 20px;
       background: #005f99;
       color: white;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-bar a:hover {
+      background: #004070;
     }
   </style>
 </head>
@@ -79,9 +88,9 @@
 
   <div class="gallery">
     <img src="Rt.png" alt="تصليح كارت إلكترونية" onclick="openLightbox(this.src)" />
-    <img src="Hh.png" alt="لحام دقيق" onclick="openLightbox(this.src)" />
+    <img src="Hh.png" alt="لحام مكونات دقيقة" onclick="openLightbox(this.src)" />
     <img src="Cc.jpg" alt="كارت أم" onclick="openLightbox(this.src)" />
-    <img src="Ce.jpg" alt="دوائر كهربائية" onclick="openLightbox(this.src)" />
+    <img src="Ce.jpg" alt="قطع إلكترونية" onclick="openLightbox(this.src)" />
     <img src="Tech.jpg" alt="في قلب العمل" onclick="openLightbox(this.src)" />
   </div>
 
@@ -89,13 +98,17 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
-  <a href="index.html" class="back">⬅️ الرجوع للصفحة الرئيسية</a>
+  <div class="btn-bar">
+    <a href="index.html">⬅️ الرجوع للصفحة الرئيسية</a>
+    <a href="https://github.com/aemedenine/atelier-electronique/upload/main" target="_blank">📷 أضف صورة جديدة من GitHub</a>
+  </div>
 
   <script>
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').style.display = 'flex';
     }
+
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
     }

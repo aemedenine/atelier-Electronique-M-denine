@@ -42,15 +42,24 @@
       }
     }
 
-    .back {
+    .btn-bar {
+      margin: 30px 0;
+    }
+
+    .btn-bar a {
       display: inline-block;
-      margin: 30px auto;
+      margin: 10px 8px;
       padding: 12px 20px;
       background: #005f99;
       color: white;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-bar a:hover {
+      background: #004070;
     }
   </style>
 </head>
@@ -61,16 +70,19 @@
   <div class="videos">
     <video controls>
       <source src="video1.mp4" type="video/mp4">
-      المتصفح لا يدعم الفيديو.
+      المتصفح لا يدعم عرض الفيديو.
     </video>
 
     <video controls>
       <source src="video2.mp4" type="video/mp4">
-      المتصفح لا يدعم الفيديو.
+      المتصفح لا يدعم عرض الفيديو.
     </video>
   </div>
 
-  <a href="index.html" class="back">⬅️ الرجوع للصفحة الرئيسية</a>
+  <div class="btn-bar">
+    <a href="index.html">⬅️ الرجوع للصفحة الرئيسية</a>
+    <a href="https://github.com/aemedenine/atelier-electronique/upload/main" target="_blank">⬆️ أضف فيديو جديد من GitHub</a>
+  </div>
 
 </body>
 </html>
