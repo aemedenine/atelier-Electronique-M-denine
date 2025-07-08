@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="43e55dc540371222" />
   <title>Atelier Electronique Médenine</title>
   <style>
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 100px;
     }
-
     body {
       font-family: sans-serif;
       background-color: #f9f9f9;
@@ -34,8 +32,23 @@
       margin: auto;
     }
 
-    .header-logo, .header-qr {
+    .header-logo {
+      width: 140px;
+      border-radius: 10px;
+    }
+
+    .qr-container {
+      text-align: center;
+    }
+
+    .qr-container img {
       width: 90px;
+      border-radius: 10px;
+    }
+
+    .qr-container p {
+      font-size: 0.9em;
+      margin-top: 5px;
     }
 
     .experience-badge {
@@ -171,20 +184,19 @@
   </div>
 
   <header>
-    <div class="header-top">
-      
-        <img src="qr-code.png" alt="QR Code" class="header-qr" />
-        <p id="qr-label" style="font-size: 0.9em; margin-top: 5px;">📱 امسح للوصول السريع</p>
+      <div class="qr-container">
+        <img src="qr-code.png" alt="QR Code" />
+        <p id="qr-label">📱 امسح للوصول السريع</p>
       </div>
     </div>
-
     <div class="experience-badge">🌼 10+ سنوات خبرة</div>
     <h1>Atelier Electronique Médenine</h1>
-    <img src="logo.png" alt="شعار الورشة" class="header-logo" />
-      <div style="text-align: center;">
+        <div class="header-top">
+      <img class="header-logo" src="logo.png" alt="شعار الورشة" />
     <p id="slogan">ورشة إلكترونيك الرحماني - نخدمو تونس الكل</p>
   </header>
 
+  <!-- باقي الصفحة (CTA, Map, Gallery, Footer, Scripts...) تبقى نفسها -->
   <div class="cta-buttons">
     <a id="whatsapp-btn" href="https://wa.me/21698192103" target="_blank">📞 تواصل معنا واتساب</a>
     <a id="maps-btn" href="https://maps.app.goo.gl/nxBU8h2oFDEkiBFE9" class="maps" target="_blank">🗘️ شوفنا على Google Maps</a>
@@ -296,19 +308,6 @@
     updateTime();
     updateVisits();
     setInterval(updateTime, 60000);
-  </script>
-
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
-  <script>
-    function initMap() {
-      const location = { lat: 33.354, lng: 10.500 };
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 13,
-        center: location,
-        disableDefaultUI: true,
-      });
-      new google.maps.Marker({ position: location, map: map });
-    }
   </script>
 </body>
 </html>
