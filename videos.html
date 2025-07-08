@@ -2,36 +2,35 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>🎥 فيديوهات الورشة - Atelier Electronique Médenine</title>
-  <meta name="description" content="شاهد فيديوهات حقيقية من داخل ورشة Atelier Electronique Médenine: إصلاح، لحام، وتجارب دقيقة.">
-  <meta name="keywords" content="فيديو, تصليح, لحام, كروت, إلكترونيات, مدنين, تونس, ورشة إلكترونيك">
   <link rel="icon" href="favicon.png" />
   <style>
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
+      margin: 0;
       padding: 20px;
+      background: #f9f9f9;
+      color: #333;
       direction: rtl;
       text-align: center;
-      color: #333;
     }
 
     h1 {
-      margin-bottom: 10px;
       color: #005f99;
     }
 
-    p.subtitle {
+    .subtitle {
       margin-bottom: 30px;
       color: #555;
     }
 
     .videos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      width: 100%;
+      margin: auto;
     }
 
     figure {
@@ -42,7 +41,6 @@
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      outline: none;
     }
 
     figcaption {
@@ -51,7 +49,7 @@
       color: #555;
     }
 
-    a.back {
+    .back {
       display: inline-block;
       margin: 30px auto;
       padding: 12px 20px;
@@ -60,11 +58,6 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    a.back:hover {
-      background: #004070;
     }
   </style>
 </head>
@@ -87,7 +80,7 @@
         <source src="video2.mp4" type="video/mp4" />
         المتصفح لا يدعم عرض الفيديو.
       </video>
-      <figcaption>لحام مكونات دقيقة</figcaption>
+      <figcaption>لحام دقيق على كارت ثلاجة</figcaption>
     </figure>
   </div>
 

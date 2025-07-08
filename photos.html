@@ -2,44 +2,44 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>📸 معرض الصور - Atelier Electronique Médenine</title>
-  <meta name="description" content="صور حصرية من ورشة Atelier Electronique Médenine في مدنين. تصليح كروت إلكترونية، لحام، ومكونات دقيقة.">
-  <meta name="keywords" content="ورشة إلكترونيك, صور, تصليح, كروت, مكونات, لحام, مدنين, تونس">
   <link rel="icon" href="favicon.png" />
   <style>
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
+      margin: 0;
       padding: 20px;
+      background: #f9f9f9;
+      color: #333;
       direction: rtl;
       text-align: center;
-      color: #333;
     }
 
     h1 {
-      margin-bottom: 10px;
       color: #005f99;
     }
 
-    p.subtitle {
+    .subtitle {
       margin-bottom: 30px;
       color: #555;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      max-width: 1000px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      width: 100%;
+      padding: 0;
+      margin: auto;
     }
 
     .gallery img {
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
     .gallery img:hover {
@@ -63,7 +63,7 @@
       border-radius: 10px;
     }
 
-    a.back {
+    .back {
       display: inline-block;
       margin: 30px auto;
       padding: 12px 20px;
@@ -72,22 +72,17 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    a.back:hover {
-      background: #004070;
     }
   </style>
 </head>
 <body>
 
   <h1>📸 معرض الصور</h1>
-  <p class="subtitle">بعض من أعمالنا داخل الورشة</p>
+  <p class="subtitle">بعض من أعمالنا داخل ورشة إلكترونيك الرحماني</p>
 
   <div class="gallery">
     <img src="Rt.png" alt="تصليح كارت إلكترونية" onclick="openLightbox(this.src)" />
-    <img src="Hh.png" alt="لحام دقيق" onclick="openLightbox(this.src)" />
+    <img src="Hh.png" alt="لحام مكونات دقيقة" onclick="openLightbox(this.src)" />
     <img src="Cc.jpg" alt="تفكيك مكونات" onclick="openLightbox(this.src)" />
     <img src="Ce.jpg" alt="مكونات إلكترونية" onclick="openLightbox(this.src)" />
     <img src="Tech.jpg" alt="الفني في العمل" onclick="openLightbox(this.src)" />
@@ -109,5 +104,6 @@
       document.getElementById("lightbox").style.display = "none";
     }
   </script>
+
 </body>
 </html>
