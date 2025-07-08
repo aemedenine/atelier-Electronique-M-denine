@@ -1,12 +1,9 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atelier Electronique Médenine</title>
-  <meta name="description" content="ورشة Atelier Electronique Médenine – إصلاح إلكتروني محترف في كامل تونس. تصليح كروت إلكترونية، حواسيب، أجهزة إنفرتر...">
-  <meta name="keywords" content="تصليح إلكتروني, كروت إلكترونية, مدنين, ورشة إلكترونيك, إلكترونيك الرحماني, اصلاح إنفرتر, تونس, صيانة كمبيوتر">
-  <meta name="author" content="Atelier Electronique Médenine">
-  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     html {
       scroll-behavior: smooth;
@@ -19,191 +16,238 @@
       margin: 0;
       direction: rtl;
       text-align: center;
-    }header {
-  background-color: #005f99;
-  color: white;
-  padding: 20px 10px;
-}
+    }
 
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px;
-  margin: auto;
-  flex-wrap: wrap;
-}
+    header {
+      background-color: #005f99;
+      color: white;
+      padding: 20px 10px;
+    }
 
-.header-logo {
-  width: 140px;
-  border-radius: 10px;
-}
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      margin: auto;
+    }
 
-.qr-container {
-  text-align: center;
-}
+    .header-logo {
+      width: 140px;
+      border-radius: 10px;
+    }
 
-.qr-container img {
-  width: 90px;
-  border-radius: 10px;
-}
+    .qr-container {
+      text-align: center;
+    }
 
-.qr-container p {
-  font-size: 0.9em;
-  margin-top: 5px;
-}
+    .qr-container img {
+      width: 90px;
+      border-radius: 10px;
+    }
 
-.experience-badge {
-  background-color: gold;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-  margin: 10px auto;
-  display: inline-block;
-}
+    .qr-container p {
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
 
-.info-bar {
-  background: #fff;
-  padding: 10px 0;
-  font-weight: bold;
-}
+    .experience-badge {
+      background-color: gold;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      margin: 10px auto;
+      display: inline-block;
+    }
 
-.cta-buttons {
-  margin: 20px 0;
-}
+    .info-bar {
+      background: #fff;
+      padding: 10px 0;
+      font-weight: bold;
+    }
 
-.cta-buttons a, .cta-buttons button {
-  display: inline-block;
-  margin: 10px 8px;
-  padding: 12px 20px;
-  background: #00a86b;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-}
+    .cta-buttons {
+      margin: 20px 0;
+    }
 
-.cta-buttons a:hover, .cta-buttons button:hover {
-  transform: scale(1.05);
-}
+    .cta-buttons a, .cta-buttons button {
+      display: inline-block;
+      margin: 10px 8px;
+      padding: 12px 20px;
+      background: #00a86b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
 
-.cta-buttons a.maps { background: #e54b4b; }
-.cta-buttons a.photos { background: #5c6bc0; }
-.cta-buttons a.videos { background: #f57c00; }
+    .cta-buttons a.maps { background: #e54b4b; }
+    .cta-buttons a.photos { background: #5c6bc0; }
+    .cta-buttons a.videos { background: #f57c00; }
 
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-  margin-top: 60px;
-}
+    #map {
+      width: 90%;
+      height: 180px;
+      border-radius: 10px;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
 
-.gallery img {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 60px;
+    }
 
-.news-ticker {
-  background-color: #c00000;
-  color: white;
-  padding: 10px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  font-weight: bold;
-  position: relative;
-}
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
 
-.news-ticker span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-horizontal-left 25s linear infinite;
-}
+    footer {
+      background: #eee;
+      padding: 15px;
+      font-size: 0.9em;
+    }
 
-@keyframes scroll-horizontal-left {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
+    .news-ticker {
+      background-color: #c00000;
+      color: white;
+      padding: 10px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+      position: relative;
+    }
 
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
+    .news-ticker span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-horizontal-left 25s linear infinite;
+    }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
+    @keyframes scroll-horizontal-left {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
 
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
 
-  .header-top {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
+      .header-top {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
 
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* زر تواصل خاص */
+    .special-contact-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px; /* تبديله لـ right: 30px; لو تحب على اليمين */
+      background-color: #e67e22;
+      color: white;
+      font-size: 28px;
+      padding: 15px 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .special-contact-btn:hover {
+      background-color: #d35400;
+    }
   </style>
 </head>
 <body>
   <div class="info-bar">
     ⏱️ <span id="current-time"></span> | 👁️ <span id="visit-count"></span>
-  </div>  <div class="news-ticker">
+  </div>
+
+  <div class="news-ticker">
     <span id="live-news">📰 جاري تحميل الأخبار...</span>
-  </div>  <header>
-    <div class="header-top">
-      <img class="header-logo" src="logo.png" alt="شعار الورشة" />
-      <div class="qr-container">
-        <img src="qr-code.png" alt="QR Code" />
-        <p id="qr-label">📱 امسح للوصول السريع</p>
-      </div>
+  </div>
+
+  <header>
+    <div class="qr-container">
+      <img src="qr-code.png" alt="QR Code" />
+      <p id="qr-label">📱 امسح للوصول السريع</p>
     </div>
     <div class="experience-badge">🌼 10+ سنوات خبرة</div>
     <h1>Atelier Electronique Médenine</h1>
-    <p id="slogan">ورشة إلكترونيك الرحماني - نخدمو تونس الكل</p>
-  </header>  <div class="cta-buttons">
+    <div class="header-top">
+      <img class="header-logo" src="logo.png" alt="شعار الورشة" />
+      <p id="slogan">ورشة إلكترونيك الرحماني - نخدمو تونس الكل</p>
+    </div>
+  </header>
+
+  <div class="cta-buttons">
     <a id="whatsapp-btn" href="https://wa.me/21698192103" target="_blank">📞 تواصل معنا واتساب</a>
-    <a id="maps-btn" href="https://maps.app.goo.gl/nxBU8h2oFDEkiBFE9" class="maps" target="_blank">🗺️ شوفنا على Google Maps</a>
+    <a id="maps-btn" href="https://maps.app.goo.gl/nxBU8h2oFDEkiBFE9" class="maps" target="_blank">🗘️ شوفنا على Google Maps</a>
     <a href="photos.html" class="photos">📷 شوف الصور</a>
     <a href="videos.html" class="videos">🎞️ شوف الفيديو</a>
     <button id="play-radio">📻 شغّل الراديو</button>
     <button onclick="toggleLanguage()">🌐 تغيير اللغة</button>
-  </div>  <div style="text-align:center; margin: 20px auto;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.443769761223!2d10.50240231524852!3d33.35425938079437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x125581c3d7e37eeb%3A0x75ef18fa82b4c398!2sAtelier%20Electronique%20M%C3%A9denine!5e0!3m2!1sar!2stn!4v1689967906855!5m2!1sar!2stn"
-      width="90%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>  <div class="gallery">
+  </div>
+
+  <div id="map"></div>
+
+  <div class="gallery">
     <img src="Tech.jpg" alt="صورة من الورشة" onclick="openLightbox(this.src)" />
     <img src="Hh.png" alt="إصلاح إلكتروني" onclick="openLightbox(this.src)" />
-  </div>  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="" />
-  </div>  <footer id="footer-text">
+  </div>
+
+  <footer id="footer-text">
     📍 مدنين – نخدمو في كامل أنحاء تونس | 📲 WhatsApp:98192103<br>
     ⏰ من الإثنين للسبت، 08:00 - 18:00 | الأحد راحة
-  </footer><audio id="radio-stream" src="https://stream.radiojar.com/8s5u5tpdtwzuv" preload="none"></audio>
+  </footer>
+
+  <audio id="radio-stream" src="https://stream.radiojar.com/8s5u5tpdtwzuv" preload="none"></audio>
+
+  <a href="contact.html" class="special-contact-btn" title="تواصل معنا">📩</a>
 
   <script>
     function updateTime() {
@@ -265,6 +309,7 @@
         document.documentElement.dir = 'rtl';
         document.getElementById('slogan').textContent = "ورشة إلكترونيك الرحماني - نخدمو تونس الكل";
         document.getElementById('qr-label').textContent = "📱 امسح للوصول السريع";
+        document.getElementById('whatsapp-btn').textContent
         document.getElementById('whatsapp-btn').textContent = "📞 تواصل معنا واتساب";
         document.getElementById('maps-btn').textContent = "🗺️ شوفنا على Google Maps";
         document.querySelector('.photos').textContent = "📷 شوف الصور";
@@ -289,5 +334,6 @@
     updateTime();
     updateVisits();
     setInterval(updateTime, 60000);
-  </script></body>
+  </script>
+</body>
 </html>
