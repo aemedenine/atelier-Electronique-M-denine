@@ -4,49 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>🎥 فيديوهات الورشة - Atelier Electronique Médenine</title>
-  <link rel="icon" href="favicon.png" />
   <style>
     body {
       font-family: sans-serif;
-      margin: 0;
-      padding: 20px;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
       color: #333;
+      margin: 0;
       direction: rtl;
       text-align: center;
     }
 
     h1 {
-      color: #005f99;
-    }
-
-    .subtitle {
-      margin-bottom: 30px;
-      color: #555;
+      padding: 20px 10px;
+      background: #005f99;
+      color: white;
+      margin: 0 0 20px 0;
     }
 
     .videos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 20px;
+      max-width: 800px;
       margin: auto;
-    }
-
-    figure {
-      margin: 0;
     }
 
     video {
       width: 100%;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
-    figcaption {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #555;
+    @media (max-width: 600px) {
+      .videos {
+        grid-template-columns: 1fr;
+      }
     }
 
     .back {
@@ -64,24 +57,17 @@
 <body>
 
   <h1>🎥 فيديوهات الورشة</h1>
-  <p class="subtitle">بعض لقطات العمل والمهارة داخل الورشة</p>
 
   <div class="videos">
-    <figure>
-      <video controls poster="cover1.jpg">
-        <source src="video1.mp4" type="video/mp4" />
-        المتصفح لا يدعم عرض الفيديو.
-      </video>
-      <figcaption>إصلاح كارت إنفرتر</figcaption>
-    </figure>
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+      المتصفح لا يدعم الفيديو.
+    </video>
 
-    <figure>
-      <video controls poster="cover2.jpg">
-        <source src="video2.mp4" type="video/mp4" />
-        المتصفح لا يدعم عرض الفيديو.
-      </video>
-      <figcaption>لحام دقيق على كارت ثلاجة</figcaption>
-    </figure>
+    <video controls>
+      <source src="video2.mp4" type="video/mp4">
+      المتصفح لا يدعم الفيديو.
+    </video>
   </div>
 
   <a href="index.html" class="back">⬅️ الرجوع للصفحة الرئيسية</a>
