@@ -2,7 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>معرض الصور - Atelier Electronique Médenine</title>
+  <title>📸 معرض الصور - Atelier Electronique Médenine</title>
+  <meta name="description" content="صور حصرية من ورشة Atelier Electronique Médenine في مدنين. تصليح كروت إلكترونية، لحام، ومكونات دقيقة.">
+  <meta name="keywords" content="ورشة إلكترونيك, صور, تصليح, كروت, مكونات, لحام, مدنين, تونس">
+  <link rel="icon" href="favicon.png" />
   <style>
     body {
       font-family: sans-serif;
@@ -15,6 +18,7 @@
 
     h1 {
       margin-bottom: 10px;
+      color: #005f99;
     }
 
     p.subtitle {
@@ -35,10 +39,28 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
     }
 
     a.back {
@@ -61,17 +83,31 @@
 <body>
 
   <h1>📸 معرض الصور</h1>
-  <p class="subtitle">بعض من أعمالنا في ورشة إلكترونيك الرحماني</p>
+  <p class="subtitle">بعض من أعمالنا داخل الورشة</p>
 
   <div class="gallery">
-    <img src="Rt.png" alt="تصليح كارت إلكترونية" />
-    <img src="Hh.png" alt="لحام مكونات إلكترونية" />
-    <img src="Cc.jpg" alt="لحام مكونات إلكترونية" />
-    <img src="Ce.jpg" alt="مكونات إلكترونية دقيقة" />
-    <img src="Tech.jpg" alt="الفني في العمل" />
+    <img src="Rt.png" alt="تصليح كارت إلكترونية" onclick="openLightbox(this.src)" />
+    <img src="Hh.png" alt="لحام دقيق" onclick="openLightbox(this.src)" />
+    <img src="Cc.jpg" alt="تفكيك مكونات" onclick="openLightbox(this.src)" />
+    <img src="Ce.jpg" alt="مكونات إلكترونية" onclick="openLightbox(this.src)" />
+    <img src="Tech.jpg" alt="الفني في العمل" onclick="openLightbox(this.src)" />
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="صورة مكبرة" />
   </div>
 
   <a href="index.html" class="back">⬅️ الرجوع للصفحة الرئيسية</a>
 
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 </body>
 </html>
