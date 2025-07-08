@@ -358,6 +358,7 @@
   <a href="contact.html" class="special-contact-btn" title="تواصل معنا">📩</a>
 
   <script>
+  document.addEventListener('DOMContentLoaded', () => {
     // تحديث الوقت والتاريخ
     function updateTime() {
       const now = new Date();
@@ -379,9 +380,24 @@
       document.getElementById('visit-count').textContent = `عدد الزيارات: ${visits}`;
     }
 
-    // تشغيل وإيقاف الراديو
+    // تحديثات مبدئية
+    updateTime();
+    updateVisits();
+    setInterval(updateTime, 60000); // تحديث كل دقيقة
+
+    // FAQ فتح وإغلاق
+    document.querySelectorAll('.faq-item h3').forEach(h3 => {
+      h3.addEventListener('click', () => {
+        const parent = h3.parentElement;
+        parent.classList.toggle('open');
+      });
+    });
+
+    // راديو القرآن
     const radio = document.getElementById('radio-stream');
     const radioBtn = document.getElementById('play-radio');
+    let currentLang = document.documentElement.lang.startsWith('ar') ? 'ar' : 'fr';
+
     radioBtn.addEventListener('click', () => {
       if (radio.paused) {
         radio.play();
@@ -392,20 +408,27 @@
       }
     });
 
-    // فتح وغلق نافذة عرض الصور
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
+    // الأخبار الحية (من BBC عربي)
+    async function fetchNews() {
+      try {
+        // مثال وهمي للأخبار (بدلها بمصدر حقيقي لو تحب)
+        const news = [
+          "📢 ورشة إلكترونيك الرحماني تفتح أبوابها لجميع الولايات.",
+          "🔧 خدمات تصليح الأجهزة الإلكترونية بجودة عالية وبأسعار منافسة.",
+          "🌍 التوصيل عبر البريد متوفر لكل أنحاء تونس.",
+          "📱 تواصل معنا عبر واتساب لأي استفسار."
+        ];
+        document.getElementById('live-news').textContent = news.join('  •  ');
+      } catch (e) {
+        document.getElementById('live-news').textContent = 'تعذر تحميل الأخبار حالياً.';
+      }
     }
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
+    fetchNews();
 
     // تغيير اللغة عربي/فرنسي
-    let currentLang = 'ar';
     const experienceBadge = document.querySelector('.experience-badge');
 
-    function toggleLanguage() {
+    window.toggleLanguage = function() {
       if (currentLang === 'ar') {
         document.documentElement.lang = 'fr';
         document.documentElement.dir = 'ltr';
@@ -418,19 +441,15 @@
         document.getElementById('play-radio').textContent = "📻 Écouter la radio";
         document.getElementById('footer-text').innerHTML = "📍 Médenine – Service dans toute la Tunisie | 📲 WhatsApp:98192103<br>⏰ Du lundi au samedi, 08:00 - 18:00 | Dimanche fermé";
         experienceBadge.textContent = "🌼 10+ ans d'expérience";
-        currentLang = 'fr';
 
-        // ترجمة الأسئلة
-        document.querySelector('.faq h2').textContent = "FAQ - Questions fréquentes";
-        const faqQuestions = document.querySelector
-        // ترجمة الأسئلة الشائعة (FAQ)
-        const faqQuestions = [
+        // ترجمة الأسئلة الشائعة
+        const faqQuestionsFr = [
           "Comment envoyer un appareil pour réparation ?",
           "Quelle est la durée habituelle de réparation ?",
           "Fournissez-vous des pièces d'origine ?",
           "Comment suivre l'état de la réparation ?"
         ];
-        const faqAnswers = [
+        const faqAnswersFr = [
           "Vous pouvez envoyer l'appareil par courrier à l'atelier ou nous contacter pour organiser la collecte.",
           "La durée varie selon le type de panne, mais ne dépasse généralement pas 3 jours ouvrables.",
           "Oui, nous fournissons des pièces originales et de haute qualité pour tous les appareils.",
@@ -438,12 +457,13 @@
         ];
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach((item, i) => {
-          item.querySelector('h3').textContent = faqQuestions[i];
-          item.querySelector('.answer').textContent = faqAnswers[i];
-          item.classList.remove('open'); // يغلق الأسئلة عند التبديل
+          item.querySelector('h3').textContent = faqQuestionsFr[i];
+          item.querySelector('.answer').textContent = faqAnswersFr[i];
+          item.classList.remove('open'); // إغلاق الأسئلة عند التبديل
         });
+
+        currentLang = 'fr';
       } else {
-        // العودة إلى العربية
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
         document.getElementById('slogan').textContent = "ورشة إلكترونيك الرحماني - نخدمو تونس الكل";
@@ -456,7 +476,6 @@
         document.getElementById('footer-text').innerHTML = "📍 مدنين – نخدمو في كامل أنحاء تونس | 📲 WhatsApp:98192103<br>⏰ من الإثنين للسبت، 08:00 - 18:00 | الأحد راحة";
         experienceBadge.textContent = "🌼 10+ سنوات خبرة";
 
-        // ترجمة الأسئلة الشائعة (FAQ) إلى العربية
         const faqQuestionsAr = [
           "كيف يمكنني إرسال جهاز للإصلاح؟",
           "ما هي مدة التصليح المعتادة؟",
@@ -472,43 +491,13 @@
         faqItems.forEach((item, i) => {
           item.querySelector('h3').textContent = faqQuestionsAr[i];
           item.querySelector('.answer').textContent = faqAnswersAr[i];
-          item.classList.remove('open'); // يغلق الأسئلة عند التبديل
+          item.classList.remove('open');
         });
 
         currentLang = 'ar';
       }
-    }
-
-    // FAQ فتح وإغلاق
-    document.querySelectorAll('.faq-item h3').forEach(h3 => {
-      h3.addEventListener('click', () => {
-        const parent = h3.parentElement;
-        parent.classList.toggle('open');
-      });
-    });
-
-    // بدء التحديثات الأولية
-    updateTime();
-    updateVisits();
-    setInterval(updateTime, 60000); // تحديث كل دقيقة
-
-    // الأخبار الحية (من BBC عربي)
-    async function fetchNews() {
-      try {
-        // لأننا ما نقدرش نجيب RSS مباشرة من طرف ثالث (CORS)، نعطيك هنا مثال نصي وهمي
-        const news = [
-          "📢 ورشة إلكترونيك الرحماني تفتح أبوابها لجميع الولايات.",
-          "🔧 خدمات تصليح الأجهزة الإلكترونية بجودة عالية وبأسعار منافسة.",
-          "🌍 التوصيل عبر البريد متوفر لكل أنحاء تونس.",
-          "📱 تواصل معنا عبر واتساب لأي استفسار."
-        ];
-        document.getElementById('live-news').textContent = news.join('  •  ');
-      } catch (e) {
-        document.getElementById('live-news').textContent = 'تعذر تحميل الأخبار حالياً.';
-      }
-    }
-    fetchNews();
-
+    };
+  });
   </script>
 </body>
 </html>
